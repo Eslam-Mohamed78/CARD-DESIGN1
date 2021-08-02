@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  font-family: "Inter", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
+  height: 100%;
+  background-color: #0a0c1b;
+  color: hsl(0, 0%, 100%);
+}
+main {
+  display: flex;
+  align-items: center; /* center vertically */
+  max-width: 1200px; /* this will restrict width of main tag to 1200px */
+  margin: 0 auto; /* center main tag horizontally as we restricted width */
+  padding: 20px;
+  min-height: 100%; /* this will make sure main will at least occupy viewport height */
+}
+main .card {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #1c1938;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  main .card .content {
+    flex-basis: 50%;
+    padding: 0 100px 0 70px;
+  }
+}
+main .card .photo {
+  flex-basis: 50%;
+  position: relative;
+}
+main .card .photo img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+main .photo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(277deg 100% 45% / 45%);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+main .content .intro h3 {
+  font-size: 38px;
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+}
+main .content .intro h3 span {
+  color: #aa5bda;
+}
+main .content .intro p {
+  line-height: 1.7;
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 15px;
+  margin-right: 5px;
+}
+main .content ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+  margin: 50px 55px 0 0;
+}
+main .content ul li h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  margin-bottom: 0;
+}
+main .content ul li p {
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  font-size: 10px;
+}
+@media (max-width: 767px) {
+  .card {
+    flex-direction: column-reverse;
+  }
+  .card .content {
+    text-align: center;
+    padding: 0;
+  }
+  main .photo::after {
+    border-bottom-right-radius: 0;
+  }
+  main .content .intro h3 {
+    font-size: 32px;
+  }
+  .content .intro p {
+    padding: 0 25px;
+  }
+  main .card .content ul {
+    flex-direction: column;
+    margin: 20px 0 30px;
+  }
+}
